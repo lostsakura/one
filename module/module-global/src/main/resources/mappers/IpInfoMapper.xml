@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leavemails.one.module.global.dao.IpInfoMapper">
+
+    <select id="selectAll" resultType="com.leavemails.one.module.global.domain.dto.IpInfoDTO">
+        select id,
+               ip,
+               lng,
+               lat,
+               address,
+               latest_conn_time,
+               insert_time,
+               update_time
+        from ip_info
+        order by update_time desc
+        limit 100
+    </select>
+</mapper>

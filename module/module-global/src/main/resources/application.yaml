@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: one-global
+  datasource:
+    druid:
+      url: jdbc:mysql://121.5.234.189:13306/anti?useUnicode=true&useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: one
+      password: 123!@#
+      driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*.xml
