@@ -1,10 +1,10 @@
 package com.leavemails.one.module.global.service.impl;
 
-import cn.hutool.core.bean.BeanUtil;
 import com.leavemails.one.module.global.dao.IpInfoMapper;
 import com.leavemails.one.module.global.domain.dto.IpInfoDTO;
 import com.leavemails.one.module.global.domain.vo.IpInfoVO;
 import com.leavemails.one.module.global.service.GlobalService;
+import com.leavemails.one.module.global.struct.IpInfoConvert;
 import leavemails.one.common.model.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,10 @@ public class GlobalServiceImpl implements GlobalService {
     @Override
     public Result<List<IpInfoVO>> list() {
         List<IpInfoDTO> ipInfoDTOS = ipInfoMapper.selectAll();
-        List<IpInfoVO> ipInfoVOS = BeanUtil.copyToList(ipInfoDTOS, IpInfoVO.class);
+        for (IpInfoDTO ipInfoDTO : ipInfoDTOS) {
+            System.out.println();
+        }
+        List<IpInfoVO> ipInfoVOS = IpInfoConvert.INSTANCE.ipInfoDTOS2IpInfoVOS(ipInfoDTOS);
         return Result.success(ipInfoVOS);
     }
 }

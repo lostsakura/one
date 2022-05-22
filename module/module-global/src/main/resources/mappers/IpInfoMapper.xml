@@ -5,16 +5,16 @@
 <mapper namespace="com.leavemails.one.module.global.dao.IpInfoMapper">
 
     <select id="selectAll" resultType="com.leavemails.one.module.global.domain.dto.IpInfoDTO">
-        select id,
-               ip,
+        SELECT id,
+               INET_NTOA(ip) ip,
                lng,
                lat,
                address,
                latest_conn_time,
                insert_time,
                update_time
-        from ip_info
-        order by update_time desc
-        limit 100
+        FROM ip_info
+        ORDER BY update_time DESC
+        LIMIT 1000
     </select>
 </mapper>

@@ -2,8 +2,6 @@ package com.leavemails.one.module.global.domain.vo;
 
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * @author lostsakura
  * @date 2022-05-20 18:06
@@ -19,6 +17,6 @@ public class IpInfoVO {
 
     private String address;
 
-    private Date latestConnTime;
+    private Long latestConnTime;
 
 }

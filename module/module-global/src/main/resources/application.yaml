@@ -6,7 +6,7 @@ spring:
     name: one-global
   datasource:
     druid:
-      url: jdbc:mysql://121.5.234.189:13306/anti?useUnicode=true&useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://leavemails.com:13306/one_global?useUnicode=true&useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       username: one
       password: 123!@#
       driver-class-name: com.mysql.cj.jdbc.Driver

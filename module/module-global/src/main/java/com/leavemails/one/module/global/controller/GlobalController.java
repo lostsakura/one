@@ -14,7 +14,7 @@ import java.util.List;
  * @author lostsakura
  * @date 2022-05-20 17:44
  */
-@RequestMapping("/global")
+@RequestMapping("global")
 @RestController
 public class GlobalController {
 
@@ -25,7 +25,7 @@ public class GlobalController {
         this.globalService = globalService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public Result<List<IpInfoVO>> list() {
         return globalService.list();
     }
