@@ -1,5 +1,6 @@
 package com.leavemails.one.module.global.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.leavemails.one.module.global.dao.IpInfoMapper;
 import com.leavemails.one.module.global.domain.dto.IpInfoDTO;
 import com.leavemails.one.module.global.domain.vo.IpInfoVO;
@@ -27,7 +28,7 @@ public class GlobalServiceImpl implements GlobalService {
     @Override
     public Result<List<IpInfoVO>> list() {
         List<IpInfoDTO> ipInfoDTOS = ipInfoMapper.selectAll();
-        ipInfoDTOS.stream().map()
-        return null;
+        List<IpInfoVO> ipInfoVOS = BeanUtil.copyToList(ipInfoDTOS, IpInfoVO.class);
+        return Result.success(ipInfoVOS);
     }
 }
