@@ -7,6 +7,7 @@ import com.leavemails.one.module.global.service.GlobalService;
 import com.leavemails.one.module.global.struct.IpInfoConvert;
 import leavemails.one.common.model.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,18 +20,17 @@ import java.util.List;
 public class GlobalServiceImpl implements GlobalService {
 
     private final IpInfoMapper ipInfoMapper;
+    private final RedisTemplate redisTemplate;
 
     @Autowired
-    public GlobalServiceImpl(IpInfoMapper ipInfoMapper) {
+    public GlobalServiceImpl(IpInfoMapper ipInfoMapper, RedisTemplate redisTemplate) {
         this.ipInfoMapper = ipInfoMapper;
+        this.redisTemplate = redisTemplate;
     }
 
     @Override
     public Result<List<IpInfoVO>> list() {
         List<IpInfoDTO> ipInfoDTOS = ipInfoMapper.selectAll();
-        for (IpInfoDTO ipInfoDTO : ipInfoDTOS) {
-            System.out.println();
-        }
         List<IpInfoVO> ipInfoVOS = IpInfoConvert.INSTANCE.ipInfoDTOS2IpInfoVOS(ipInfoDTOS);
         return Result.success(ipInfoVOS);
     }
