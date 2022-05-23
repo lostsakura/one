@@ -30,7 +30,7 @@ public class QuartzConfig {
     public CronTriggerFactoryBean refreshIpConnectionRecordCronTrigger(@Qualifier("refreshIpConnectionRecordJob") MethodInvokingJobDetailFactoryBean jobDetailFactoryBean) {
         CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
         cronTriggerFactoryBean.setJobDetail(Objects.requireNonNull(jobDetailFactoryBean.getObject()));
-        cronTriggerFactoryBean.setCronExpression("*/10 * * * * ?");
+        cronTriggerFactoryBean.setCronExpression("*/5 * * * * ?");
         return cronTriggerFactoryBean;
     }
 

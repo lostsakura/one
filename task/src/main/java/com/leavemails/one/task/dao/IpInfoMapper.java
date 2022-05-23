@@ -1,4 +1,4 @@
-package com.leavemails.one.module.global.dao;
+package com.leavemails.one.task.dao;
 
 import leavemails.one.common.domain.dto.module.global.IpInfoDTO;
 import org.apache.ibatis.annotations.Mapper;

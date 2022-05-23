@@ -1,10 +1,8 @@
 package com.leavemails.one.module.global.service.impl;
 
-import com.leavemails.one.module.global.dao.IpInfoMapper;
-import leavemails.one.common.domain.dto.module.global.IpInfoDTO;
-import leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import cn.hutool.json.JSONUtil;
 import com.leavemails.one.module.global.service.GlobalService;
-import leavemails.one.common.convert.IpInfoConvert;
+import leavemails.one.common.domain.vo.module.global.IpInfoVO;
 import leavemails.one.common.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +10,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,19 +22,20 @@ import java.util.List;
 @Service
 public class GlobalServiceImpl implements GlobalService {
 
-    private final IpInfoMapper ipInfoMapper;
     private final RedisTemplate redisTemplate;
 
     @Autowired
-    public GlobalServiceImpl(IpInfoMapper ipInfoMapper, RedisTemplate redisTemplate) {
-        this.ipInfoMapper = ipInfoMapper;
+    public GlobalServiceImpl(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
     @Override
     public Result<List<IpInfoVO>> list() {
-        List<IpInfoDTO> ipInfoDTOS = ipInfoMapper.selectAll();
-        List<IpInfoVO> ipInfoVOS = IpInfoConvert.INSTANCE.ipInfoDTOS2IpInfoVOS(ipInfoDTOS);
+        List<IpInfoVO> ipInfoVOS = new ArrayList<>();
+        Object cache = redisTemplate.opsForValue().get("ONE:GLOBAL:IP-LIST");
+        if (cache != null) {
+            ipInfoVOS = JSONUtil.parseArray(cache).toList(IpInfoVO.class);
+        }
         return Result.success(ipInfoVOS);
     }
 }
