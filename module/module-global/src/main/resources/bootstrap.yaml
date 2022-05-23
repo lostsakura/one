@@ -1,0 +1,20 @@
+server:
+  port: 8701
+
+spring:
+  application:
+    name: one-global
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        namespace: 66280131-0cb7-491a-bddf-3f123bf6746f
+        file-extension: yaml
+      discovery:
+        namespace: 66280131-0cb7-491a-bddf-3f123bf6746f
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*.xml
