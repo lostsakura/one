@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.leavemails.one.module.global.dao.IpInfoMapper">
 
-    <select id="selectAll" resultType="com.leavemails.one.module.global.domain.dto.IpInfoDTO">
+    <select id="selectAll" resultType="leavemails.one.common.domain.dto.module.global.IpInfoDTO">
         SELECT id,
                INET_NTOA(ip) ip,
                lng,

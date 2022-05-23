@@ -1,6 +1,6 @@
 package com.leavemails.one.module.global.controller;
 
-import com.leavemails.one.module.global.domain.vo.IpInfoVO;
+import leavemails.one.common.domain.vo.module.global.IpInfoVO;
 import com.leavemails.one.module.global.service.GlobalService;
 import leavemails.one.common.model.Result;
 import org.springframework.beans.factory.annotation.Autowired;

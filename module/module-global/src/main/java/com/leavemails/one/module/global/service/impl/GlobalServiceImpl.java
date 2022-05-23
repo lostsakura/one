@@ -1,14 +1,13 @@
 package com.leavemails.one.module.global.service.impl;
 
 import com.leavemails.one.module.global.dao.IpInfoMapper;
-import com.leavemails.one.module.global.domain.dto.IpInfoDTO;
-import com.leavemails.one.module.global.domain.vo.IpInfoVO;
+import leavemails.one.common.domain.dto.module.global.IpInfoDTO;
+import leavemails.one.common.domain.vo.module.global.IpInfoVO;
 import com.leavemails.one.module.global.service.GlobalService;
-import com.leavemails.one.module.global.struct.IpInfoConvert;
+import leavemails.one.common.convert.IpInfoConvert;
 import leavemails.one.common.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.leavemails.one.module.global.domain.dto;
+package leavemails.one.common.domain.dto.module.global;
 
 import leavemails.one.common.domain.dto.BaseDTO;
 import lombok.Data;

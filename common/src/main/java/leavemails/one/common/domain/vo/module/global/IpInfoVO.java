@@ -1,5 +1,6 @@
-package com.leavemails.one.module.global.domain.vo;
+package leavemails.one.common.domain.vo.module.global;
 
+import leavemails.one.common.domain.vo.BaseVO;
 import lombok.Data;
 
 /**
@@ -7,7 +8,7 @@ import lombok.Data;
  * @date 2022-05-20 18:06
  */
 @Data
-public class IpInfoVO {
+public class IpInfoVO extends BaseVO {
 
     private String ip;
 
