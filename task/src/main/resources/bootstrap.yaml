@@ -14,7 +14,3 @@ spring:
         file-extension: yaml
       discovery:
         namespace: 66280131-0cb7-491a-bddf-3f123bf6746f
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
-  mapper-locations: classpath:mappers/*.xml
