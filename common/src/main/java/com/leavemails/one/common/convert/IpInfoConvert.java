@@ -1,7 +1,7 @@
-package leavemails.one.common.convert;
+package com.leavemails.one.common.convert;
 
-import leavemails.one.common.domain.dto.module.global.IpInfoDTO;
-import leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import com.leavemails.one.common.domain.dto.module.global.IpInfoDTO;
+import com.leavemails.one.common.domain.vo.module.global.IpInfoVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

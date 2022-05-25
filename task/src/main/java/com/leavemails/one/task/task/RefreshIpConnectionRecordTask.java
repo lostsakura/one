@@ -2,7 +2,7 @@ package com.leavemails.one.task.task;
 
 import cn.hutool.core.date.DateUtil;
 import com.leavemails.one.task.dao.IpInfoMapper;
-import leavemails.one.common.domain.dto.module.global.IpInfoDTO;
+import com.leavemails.one.common.domain.dto.module.global.IpInfoDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

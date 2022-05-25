@@ -1,4 +1,4 @@
-package leavemails.one.common.annotation;
+package com.leavemails.one.common.annotation;
 
 import java.lang.annotation.*;
 
@@ -11,5 +11,4 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SysLog {
 
-    int age();
 }

@@ -1,6 +1,6 @@
-package leavemails.one.common.constants;
+package com.leavemails.one.common.constants;
 
-import leavemails.one.common.model.StatusCode;
+import com.leavemails.one.common.model.StatusCode;
 
 /**
  * @author lostsakura

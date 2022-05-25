@@ -1,8 +1,9 @@
 package com.leavemails.one.module.global.controller;
 
-import leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import com.leavemails.one.common.annotation.SysLog;
+import com.leavemails.one.common.domain.vo.module.global.IpInfoVO;
 import com.leavemails.one.module.global.service.GlobalService;
-import leavemails.one.common.model.Result;
+import com.leavemails.one.common.model.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class GlobalController {
         this.globalService = globalService;
     }
 
+    @SysLog()
     @GetMapping("")
     public Result<List<IpInfoVO>> list() {
         return globalService.list();

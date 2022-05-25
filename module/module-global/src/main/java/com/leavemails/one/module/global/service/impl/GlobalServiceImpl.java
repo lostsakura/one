@@ -2,8 +2,8 @@ package com.leavemails.one.module.global.service.impl;
 
 import cn.hutool.json.JSONUtil;
 import com.leavemails.one.module.global.service.GlobalService;
-import leavemails.one.common.domain.vo.module.global.IpInfoVO;
-import leavemails.one.common.model.Result;
+import com.leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import com.leavemails.one.common.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

@@ -1,7 +1,7 @@
-package leavemails.one.common.model;
+package com.leavemails.one.common.model;
 
 import cn.hutool.core.lang.Assert;
-import leavemails.one.common.constants.GlobalStatusCodeConstants;
+import com.leavemails.one.common.constants.GlobalStatusCodeConstants;
 import lombok.Data;
 
 import java.io.Serializable;

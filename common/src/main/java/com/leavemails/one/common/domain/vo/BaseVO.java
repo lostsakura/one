@@ -1,4 +1,4 @@
-package leavemails.one.common.domain.vo;
+package com.leavemails.one.common.domain.vo;
 
 import lombok.Getter;
 import lombok.Setter;

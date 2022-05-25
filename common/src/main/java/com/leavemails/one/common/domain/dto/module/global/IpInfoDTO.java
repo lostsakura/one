@@ -1,6 +1,6 @@
-package leavemails.one.common.domain.dto.module.global;
+package com.leavemails.one.common.domain.dto.module.global;
 
-import leavemails.one.common.domain.dto.BaseDTO;
+import com.leavemails.one.common.domain.dto.BaseDTO;
 import lombok.Data;
 
 import java.util.Date;

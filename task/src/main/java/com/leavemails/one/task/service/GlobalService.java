@@ -1,7 +1,7 @@
 package com.leavemails.one.task.service;
 
-import leavemails.one.common.domain.vo.module.global.IpInfoVO;
-import leavemails.one.common.model.Result;
+import com.leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import com.leavemails.one.common.model.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
