@@ -30,6 +30,7 @@
         <mysql.version>8.0.28</mysql.version>
         <druid.version>1.2.8</druid.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
+        <feign-okhttp.version>11.8</feign-okhttp.version>
     </properties>
 
     <dependencyManagement>
@@ -54,6 +55,11 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${feign-okhttp.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
