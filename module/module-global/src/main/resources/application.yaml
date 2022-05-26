@@ -7,3 +7,5 @@ feign:
     enabled: false
   okhttp:
     enabled: true
+logging:
+  config: classpath:logback-spring.xml

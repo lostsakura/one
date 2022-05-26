@@ -1,6 +1,6 @@
 package com.leavemails.one.task.service;
 
-import com.leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
 import com.leavemails.one.common.model.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +15,6 @@ import java.util.List;
 public interface GlobalService {
 
     @GetMapping("/global")
-    Result<List<IpInfoVO>> list();
+    Result<List<GlobalIpInfoVO>> list();
 
 }

@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.leavemails.one.task.dao.IpInfoMapper">
+<mapper namespace="com.leavemails.one.task.dao.GlobalIpInfoMapper">
 
-    <select id="selectAll" resultType="com.leavemails.one.common.domain.dto.module.global.IpInfoDTO">
+    <select id="selectAll" resultType="com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO">
         SELECT id,
                INET_NTOA(ip) ip,
                lng,
@@ -13,7 +13,7 @@
                latest_conn_time,
                insert_time,
                update_time
-        FROM ip_info
+        FROM global_ip_info
         ORDER BY update_time DESC
         LIMIT 1000
     </select>

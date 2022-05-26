@@ -1,8 +1,8 @@
 package com.leavemails.one.task.task;
 
 import cn.hutool.core.date.DateUtil;
-import com.leavemails.one.task.dao.IpInfoMapper;
-import com.leavemails.one.common.domain.dto.module.global.IpInfoDTO;
+import com.leavemails.one.task.dao.GlobalIpInfoMapper;
+import com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -20,17 +20,17 @@ import java.util.concurrent.TimeUnit;
 public class RefreshIpConnectionRecordTask {
 
     private final RedisTemplate redisTemplate;
-    private final IpInfoMapper ipInfoMapper;
+    private final GlobalIpInfoMapper globalIpInfoMapper;
 
     @Autowired
-    public RefreshIpConnectionRecordTask(RedisTemplate redisTemplate, IpInfoMapper ipInfoMapper) {
+    public RefreshIpConnectionRecordTask(RedisTemplate redisTemplate, GlobalIpInfoMapper globalIpInfoMapper) {
         this.redisTemplate = redisTemplate;
-        this.ipInfoMapper = ipInfoMapper;
+        this.globalIpInfoMapper = globalIpInfoMapper;
     }
 
     void run() {
-        List<IpInfoDTO> ipInfoDTOS = ipInfoMapper.selectAll();
-        redisTemplate.opsForValue().set("ONE:GLOBAL:IP-LIST", ipInfoDTOS, 10, TimeUnit.SECONDS);
+        List<GlobalIpInfoDTO> globalIpInfoDTOS = globalIpInfoMapper.selectAll();
+        redisTemplate.opsForValue().set("ONE:GLOBAL:IP-LIST", globalIpInfoDTOS, 10, TimeUnit.SECONDS);
         log.info("IP同步完成 - {}", DateUtil.now());
     }
 }

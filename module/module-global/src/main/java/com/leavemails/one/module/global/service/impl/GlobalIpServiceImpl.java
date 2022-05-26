@@ -1,8 +1,8 @@
 package com.leavemails.one.module.global.service.impl;
 
 import cn.hutool.json.JSONUtil;
-import com.leavemails.one.module.global.service.GlobalService;
-import com.leavemails.one.common.domain.vo.module.global.IpInfoVO;
+import com.leavemails.one.module.global.service.GlobalIpService;
+import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
 import com.leavemails.one.common.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +20,27 @@ import java.util.List;
 @RefreshScope
 @Slf4j
 @Service
-public class GlobalServiceImpl implements GlobalService {
+public class GlobalIpServiceImpl implements GlobalIpService {
 
     private final RedisTemplate redisTemplate;
 
     @Autowired
-    public GlobalServiceImpl(RedisTemplate redisTemplate) {
+    public GlobalIpServiceImpl(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
     @Override
-    public Result<List<IpInfoVO>> list() {
-        List<IpInfoVO> ipInfoVOS = new ArrayList<>();
+    public Result<List<GlobalIpInfoVO>> list() {
+        log.trace("trace");
+        log.debug("debug");
+        log.info("info");
+        log.warn("warn");
+        log.error("error");
+        List<GlobalIpInfoVO> globalIpInfoVOS = new ArrayList<>();
         Object cache = redisTemplate.opsForValue().get("ONE:GLOBAL:IP-LIST");
         if (cache != null) {
-            ipInfoVOS = JSONUtil.parseArray(cache).toList(IpInfoVO.class);
+            globalIpInfoVOS = JSONUtil.parseArray(cache).toList(GlobalIpInfoVO.class);
         }
-        return Result.success(ipInfoVOS);
+        return Result.success(globalIpInfoVOS);
     }
 }

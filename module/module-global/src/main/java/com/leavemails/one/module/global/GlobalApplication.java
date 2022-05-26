@@ -1,5 +1,6 @@
 package com.leavemails.one.module.global;
 
+import com.github.AopLog;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -8,10 +9,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author lostsakura
  * @date 2022-05-20 17:08
  */
+
 @SpringBootApplication
 @EnableDiscoveryClient
 public class GlobalApplication {
 
+    @AopLog
     public static void main(String[] args) {
         SpringApplication.run(GlobalApplication.class, args);
     }

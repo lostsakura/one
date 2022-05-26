@@ -8,7 +8,7 @@ import lombok.Data;
  * @date 2022-05-20 18:06
  */
 @Data
-public class IpInfoVO extends BaseVO {
+public class GlobalIpInfoVO extends BaseVO {
 
     private String ip;
 
