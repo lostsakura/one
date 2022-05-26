@@ -5,6 +5,8 @@
     <contextName>one-global</contextName>
     <!-- 自定义变量 -->
     <property name="MODULE_NAME" value="one-global"/>
+    <property name="MAX_FILE_SIZE" value="10MB"/>
+    <property name="MAX_HISTORY" value="30"/>
     <property name="LOG_HOME" value="./logs"/>
     <property name="CHARSET" value="UTF-8"/>
     <property name="CONSOLE_LOG_PATTERN"
@@ -31,10 +33,10 @@
             <!-- 日志文件输出的文件名,可设置文件类型为gz,开启文件压缩 -->
             <FileNamePattern>${LOG_HOME}/${MODULE_NAME}/info/info.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
             <!-- 日志文件保留天数 -->
-            <MaxHistory>30</MaxHistory>
+            <MaxHistory>${MAX_HISTORY}</MaxHistory>
             <!-- 按大小分割同一天的 -->
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <!-- 输出格式 -->
@@ -54,9 +56,9 @@
         <File>${LOG_HOME}/${MODULE_NAME}/warn/warn.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${LOG_HOME}/${MODULE_NAME}/warn/warn.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <MaxHistory>${MAX_HISTORY}</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -74,9 +76,9 @@
         <File>${LOG_HOME}/${MODULE_NAME}/error/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${LOG_HOME}/${MODULE_NAME}/error/error.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <MaxHistory>${MAX_HISTORY}</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -94,9 +96,9 @@
         <File>${LOG_HOME}/${MODULE_NAME}/operation/operation.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${LOG_HOME}/${MODULE_NAME}/operation/operation.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <MaxHistory>${MAX_HISTORY}</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
+                <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -109,7 +111,6 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
-
 
     <root level="INFO">
         <appender-ref ref="console"/>
@@ -124,7 +125,6 @@
             <appender-ref ref="warn_file"/>
             <appender-ref ref="error_file"/>
         </logger>
-
     </springProfile>
 
 </configuration>
