@@ -1,5 +1,6 @@
 package com.leavemails.one.module.global.controller;
 
+import com.github.AopLog;
 import com.leavemails.one.common.annotation.OperationLog;
 import com.leavemails.one.common.domain.query.module.global.GlobalIpQuery;
 import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
@@ -25,6 +26,7 @@ public class GlobalIpController {
         this.globalIpService = globalIpService;
     }
 
+    @AopLog
     @OperationLog
     @PostMapping("")
     public Result<List<GlobalIpInfoVO>> list(@RequestBody GlobalIpQuery query) {

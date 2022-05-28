@@ -22,11 +22,6 @@ public class OperationLogAspect {
 
     @Around("logPointCut()")
     public Object round(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.trace("annotation trace {}", System.currentTimeMillis());
-        log.debug("annotation debug {}", System.currentTimeMillis());
-        log.info("annotation info {}", System.currentTimeMillis());
-        log.warn("annotation warn {}", System.currentTimeMillis());
-        log.error("annotation error {}", System.currentTimeMillis());
         return joinPoint.proceed();
     }
 
