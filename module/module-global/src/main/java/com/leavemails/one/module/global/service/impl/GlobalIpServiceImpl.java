@@ -66,8 +66,7 @@ public class GlobalIpServiceImpl implements GlobalIpService {
                 globalIpInfoMapper.updateGlobalIpInfoByIp(globalIpInfoDTO);
             } else {
                 globalIpInfoMapper.insertGlobalIpInfo(globalIpInfoDTO);
-                GlobalIpInfoVO globalIpInfoVO = GlobalIpInfoConvert.INSTANCE.ipInfoDTO2IpInfoVO(globalIpInfoDTO);
-                globalIpInfoVOS.add(globalIpInfoVO);
+                globalIpInfoVOS.add(GlobalIpInfoConvert.INSTANCE.ipInfoDTO2IpInfoVO(globalIpInfoDTO));
             }
             redisTemplate.opsForValue().set(IP_LIST_CACHE_MARK, globalIpInfoVOS);
         }
