@@ -1,5 +1,6 @@
 package com.leavemails.one.common.annotation;
 
+import com.leavemails.one.common.enums.LogOperationEnums;
 import org.springframework.http.HttpHeaders;
 
 import java.lang.annotation.*;
@@ -13,7 +14,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface OperationLog {
 
-    String type() default "undefined";
+    LogOperationEnums type() default LogOperationEnums.UNDEFINED;
 
     String[] headers() default {HttpHeaders.USER_AGENT, HttpHeaders.CONTENT_TYPE};
 

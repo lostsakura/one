@@ -4,10 +4,14 @@ import com.github.AopLog;
 import com.leavemails.one.common.annotation.OperationLog;
 import com.leavemails.one.common.domain.query.module.global.GlobalIpQuery;
 import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
-import com.leavemails.one.module.global.service.GlobalIpService;
+import com.leavemails.one.common.enums.LogOperationEnums;
 import com.leavemails.one.common.model.Result;
+import com.leavemails.one.module.global.service.GlobalIpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -27,7 +31,7 @@ public class GlobalIpController {
     }
 
     @AopLog
-    @OperationLog
+    @OperationLog(type = LogOperationEnums.QUERY)
     @PostMapping("")
     public Result<List<GlobalIpInfoVO>> list(@RequestBody GlobalIpQuery query) {
         return globalIpService.list();

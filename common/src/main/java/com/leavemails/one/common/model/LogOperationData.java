@@ -31,7 +31,7 @@ public class LogOperationData {
 
     private Object responseBody;
 
-    private Date logTime;
+    private Date logTime = new Date();
 
     private Long costTime;
 
@@ -40,5 +40,9 @@ public class LogOperationData {
     private Long threadId = Thread.currentThread().getId();
 
     private Boolean success = false;
+
+    public void cost() {
+        this.setCostTime(System.currentTimeMillis() - this.getLogTime().getTime());
+    }
 
 }

@@ -10,9 +10,11 @@
     <property name="LOG_HOME" value="./logs"/>
     <property name="CHARSET" value="UTF-8"/>
     <property name="CONSOLE_LOG_PATTERN"
-              value="[%contextName] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
     <property name="FILE_LOG_PATTERN"
-              value="[%contextName] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+    <property name="OPERATION_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %msg%n"/>
 
     <!-- 控制台输出 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -102,7 +104,7 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <pattern>${OPERATION_LOG_PATTERN}</pattern>
             <charset>${CHARSET}</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -116,7 +118,7 @@
         <appender-ref ref="console"/>
     </root>
 
-    <springProfile name="dev,test">
+    <springProfile name="dev,test,prod">
         <logger name="com.leavemails.one.common.aspect.OperationLogAspect" level="INFO" additivity="false">
             <appender-ref ref="operation_file"/>
         </logger>
