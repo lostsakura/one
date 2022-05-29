@@ -1,6 +1,5 @@
 package com.leavemails.one.module.global.controller;
 
-import com.github.AopLog;
 import com.leavemails.one.common.annotation.OperationLog;
 import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
 import com.leavemails.one.common.enums.LogOperationEnums;
@@ -29,7 +28,6 @@ public class GlobalIpController {
         this.globalIpService = globalIpService;
     }
 
-    @AopLog
     @OperationLog(type = LogOperationEnums.QUERY)
     @GetMapping("")
     public Result<List<GlobalIpInfoVO>> list(HttpServletRequest request) {
