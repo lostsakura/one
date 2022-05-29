@@ -1,17 +1,25 @@
 package com.leavemails.one.module.global.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.json.JSONUtil;
-import com.leavemails.one.module.global.service.GlobalIpService;
+import com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO;
 import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
 import com.leavemails.one.common.model.Result;
+import com.leavemails.one.module.global.convert.GlobalIpInfoConvert;
+import com.leavemails.one.module.global.dao.GlobalIpInfoMapper;
+import com.leavemails.one.module.global.service.GlobalIpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author lostsakura
@@ -22,24 +30,46 @@ import java.util.List;
 @Service
 public class GlobalIpServiceImpl implements GlobalIpService {
 
+    private final String IP_LIST_CACHE_MARK = "ONE:GLOBAL:IP-LIST";
+
     private final RedisTemplate redisTemplate;
+    private final GlobalIpInfoMapper globalIpInfoMapper;
 
     @Autowired
-    public GlobalIpServiceImpl(RedisTemplate redisTemplate) {
+    public GlobalIpServiceImpl(RedisTemplate redisTemplate, GlobalIpInfoMapper globalIpInfoMapper) {
         this.redisTemplate = redisTemplate;
+        this.globalIpInfoMapper = globalIpInfoMapper;
     }
 
     @Override
-    public Result<List<GlobalIpInfoVO>> list() {
-        log.trace("trace");
-        log.debug("debug");
-        log.info("info");
-        log.warn("warn");
-        log.error("error");
+    public Result<List<GlobalIpInfoVO>> list(HttpServletRequest request) {
+        String clientIp = ServletUtil.getClientIP(request);
         List<GlobalIpInfoVO> globalIpInfoVOS = new ArrayList<>();
-        Object cache = redisTemplate.opsForValue().get("ONE:GLOBAL:IP-LIST");
+        Object cache = redisTemplate.opsForValue().get(IP_LIST_CACHE_MARK);
         if (cache != null) {
             globalIpInfoVOS = JSONUtil.parseArray(cache).toList(GlobalIpInfoVO.class);
+        }
+        if (StrUtil.isNotEmpty(clientIp)) {
+            Date now = new Date();
+            AtomicBoolean isExist = new AtomicBoolean(false);
+            globalIpInfoVOS
+                    .stream()
+                    .filter(o -> StrUtil.equals(o.getIp(), clientIp))
+                    .findFirst().ifPresent(o -> {
+                        o.setLatestConnTime(now.getTime());
+                        isExist.set(true);
+                    });
+            GlobalIpInfoDTO globalIpInfoDTO = new GlobalIpInfoDTO();
+            globalIpInfoDTO.setIp(clientIp);
+            globalIpInfoDTO.setLatestConnTime(now);
+            if (isExist.get()) {
+                globalIpInfoMapper.updateGlobalIpInfoByIp(globalIpInfoDTO);
+            } else {
+                globalIpInfoMapper.insertGlobalIpInfo(globalIpInfoDTO);
+                GlobalIpInfoVO globalIpInfoVO = GlobalIpInfoConvert.INSTANCE.ipInfoDTO2IpInfoVO(globalIpInfoDTO);
+                globalIpInfoVOS.add(globalIpInfoVO);
+            }
+            redisTemplate.opsForValue().set(IP_LIST_CACHE_MARK, globalIpInfoVOS);
         }
         return Result.success(globalIpInfoVOS);
     }

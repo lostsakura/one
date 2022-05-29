@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -31,8 +32,8 @@ public class GlobalIpController {
     @AopLog
     @OperationLog(type = LogOperationEnums.QUERY)
     @GetMapping("")
-    public Result<List<GlobalIpInfoVO>> list() {
-        return globalIpService.list();
+    public Result<List<GlobalIpInfoVO>> list(HttpServletRequest request) {
+        return globalIpService.list(request);
     }
 
 }

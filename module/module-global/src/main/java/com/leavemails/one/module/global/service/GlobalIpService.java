@@ -3,6 +3,7 @@ package com.leavemails.one.module.global.service;
 import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;
 import com.leavemails.one.common.model.Result;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -16,5 +17,5 @@ public interface GlobalIpService {
      *
      * @return globalIpInfoList
      */
-    Result<List<GlobalIpInfoVO>> list();
+    Result<List<GlobalIpInfoVO>> list(HttpServletRequest request);
 }

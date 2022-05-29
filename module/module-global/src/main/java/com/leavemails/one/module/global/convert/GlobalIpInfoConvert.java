@@ -1,4 +1,4 @@
-package com.leavemails.one.common.convert;
+package com.leavemails.one.module.global.convert;
 
 import com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO;
 import com.leavemails.one.common.domain.vo.module.global.GlobalIpInfoVO;

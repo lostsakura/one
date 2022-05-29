@@ -118,7 +118,7 @@
         <appender-ref ref="console"/>
     </root>
 
-    <springProfile name="dev,test,prod">
+    <springProfile name="dev,test">
         <logger name="com.leavemails.one.common.aspect.OperationLogAspect" level="INFO" additivity="false">
             <appender-ref ref="operation_file"/>
         </logger>
@@ -126,6 +126,9 @@
             <appender-ref ref="info_file"/>
             <appender-ref ref="warn_file"/>
             <appender-ref ref="error_file"/>
+        </logger>
+        <logger name="com.leavemails.one.module.global.dao" level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
         </logger>
     </springProfile>
 

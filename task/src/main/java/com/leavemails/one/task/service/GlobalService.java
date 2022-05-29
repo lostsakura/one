@@ -14,7 +14,7 @@ import java.util.List;
 @FeignClient(name = "one-global")
 public interface GlobalService {
 
-    @GetMapping("/global")
+    @GetMapping("/global/ip")
     Result<List<GlobalIpInfoVO>> list();
 
 }

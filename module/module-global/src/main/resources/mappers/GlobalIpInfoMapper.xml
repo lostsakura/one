@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leavemails.one.module.global.dao.GlobalIpInfoMapper">
+    <insert id="insertGlobalIpInfo">
+        INSERT INTO global_ip_info (ip, latest_conn_time, insert_time, update_time)
+        VALUES (INET_ATON(#{ip}), #{latestConnTime}, NOW(), NOW())
+    </insert>
+    <update id="updateGlobalIpInfoByIp">
+        UPDATE global_ip_info
+        <set>
+            <if test="lng != null and lng != ''">
+                lng = #{lng},
+            </if>
+            <if test="lat != null and lat != ''">
+                lat = #{lat},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="latestConnTime != null">
+                latest_conn_time = #{latestConnTime},
+            </if>
+            update_time = now()
+        </set>
+        <where>
+            ip = INET_ATON(#{ip})
+        </where>
+    </update>
+
+    <select id="selectAll" resultType="com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO">
+        SELECT id,
+               INET_NTOA(ip) ip,
+               lng,
+               lat,
+               address,
+               latest_conn_time,
+               insert_time,
+               update_time
+        FROM global_ip_info
+        ORDER BY update_time DESC
+        LIMIT 1000
+    </select>
+
+
+</mapper>
