@@ -9,6 +9,8 @@ COPY target/module-global-1.0-SNAPSHOT.jar /home/one/global.jar
 CMD yum install -y ntpdate \
  && ntpdate ntp1.aliyun.com
 
+VOLUME ["/home/one/logs/one-global"]
+
 ENTRYPOINT ["java", "-jar", "-Duser.timezone=GMT+08", "/home/one/global.jar", "--spring.profiles.active=test"]
 
 EXPOSE 8701
