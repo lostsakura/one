@@ -11,6 +11,6 @@ CMD yum install -y ntpdate \
 
 VOLUME ["/home/one/logs/one-global"]
 
-ENTRYPOINT ["java", "-jar", "-Duser.timezone=GMT+08", "/home/one/global.jar", "--spring.profiles.active=test"]
+ENTRYPOINT ["java", "-jar", "-Duser.timezone=GMT+08", "/home/one/global.jar", "--spring.profiles.active=prod"]
 
 EXPOSE 8701
