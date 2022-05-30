@@ -31,6 +31,7 @@
         <druid.version>1.2.8</druid.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <feign-okhttp.version>11.8</feign-okhttp.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -118,6 +119,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
