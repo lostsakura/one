@@ -11,7 +11,6 @@ import com.leavemails.one.module.global.dao.GlobalIpInfoMapper;
 import com.leavemails.one.module.global.service.GlobalIpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author lostsakura
  * @date 2022-05-20 18:09
  */
-@RefreshScope
 @Slf4j
 @Service
 public class GlobalIpServiceImpl implements GlobalIpService {

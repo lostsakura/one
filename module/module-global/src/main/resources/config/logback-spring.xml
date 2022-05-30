@@ -132,4 +132,15 @@
         </logger>
     </springProfile>
 
+    <springProfile name="prod">
+        <logger name="com.leavemails.one.common.aspect.OperationLogAspect" level="INFO" additivity="false">
+            <appender-ref ref="operation_file"/>
+        </logger>
+        <logger name="com.leavemails.one" additivity="false">
+            <appender-ref ref="info_file"/>
+            <appender-ref ref="warn_file"/>
+            <appender-ref ref="error_file"/>
+        </logger>
+    </springProfile>
+
 </configuration>
