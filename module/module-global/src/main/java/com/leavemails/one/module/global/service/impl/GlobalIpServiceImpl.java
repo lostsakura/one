@@ -16,9 +16,11 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 /**
  * @author lostsakura
@@ -68,6 +70,6 @@ public class GlobalIpServiceImpl implements GlobalIpService {
             }
             redisTemplate.opsForValue().set(IP_LIST_CACHE_MARK, globalIpInfoVOS);
         }
-        return Result.success(globalIpInfoVOS);
+        return Result.success(globalIpInfoVOS.stream().sorted(Comparator.comparingLong(GlobalIpInfoVO::getLatestConnTime).reversed()).collect(Collectors.toList()));
     }
 }
