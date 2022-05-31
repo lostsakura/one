@@ -77,17 +77,17 @@ public class OperationLogAspect {
                     if (request != null && StrUtil.isNotEmpty(request.getContentType())) {
                         String requestContentType = request.getContentType();
                         if (StrUtil.equals(requestContentType, MediaType.APPLICATION_JSON_VALUE)) {
-                            data.setParameter(target);
+                            data.setParameter(JSONUtil.toJsonStr(target));
                         }
                     }
                     if (data.getParameter() == null) {
-                        data.setParameter(spliceParameters(parameterNames, args));
+                        data.setParameter(JSONUtil.toJsonStr(spliceParameters(parameterNames, args)));
                     }
                 }
             }
             Object proceed = joinPoint.proceed();
             if (operationLog.responseBody()) {
-                data.setResponseBody(proceed);
+                data.setResponseBody(JSONUtil.toJsonStr(proceed));
             }
             data.setSuccess(true);
             return proceed;
@@ -134,7 +134,7 @@ public class OperationLogAspect {
                     headerMap.put(header, value);
                 }
             }
-            data.setHeaders(headerMap);
+            data.setHeaders(JSONUtil.toJsonStr(headerMap));
         }
     }
 

@@ -21,15 +21,15 @@ public class LogOperationData {
 
     private String httpMethod;
 
-    private Object headers;
+    private String headers;
 
     private String type;
 
     private String method;
 
-    private Object parameter;
+    private String parameter;
 
-    private Object responseBody;
+    private String responseBody;
 
     private Date logTime = new Date();
 
