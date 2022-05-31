@@ -4,6 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.json.JSONUtil;
 import com.leavemails.one.common.annotation.OperationLog;
+import com.leavemails.one.common.constants.GlobalMessageConstants;
 import com.leavemails.one.common.model.LogOperationData;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -11,7 +12,9 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -35,6 +38,13 @@ public class OperationLogAspect {
 
     private static final String AND_REG = "&";
     private static final String EQUALS_REG = "=";
+
+    private final KafkaTemplate kafkaTemplate;
+
+    @Autowired
+    public OperationLogAspect(KafkaTemplate kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
 
     @Pointcut("@annotation(com.leavemails.one.common.annotation.OperationLog)")
     public void logPointCut() {
@@ -83,7 +93,13 @@ public class OperationLogAspect {
             return proceed;
         } finally {
             data.cost();
-            log.info(JSONUtil.toJsonStr(data));
+            String dataStr = JSONUtil.toJsonStr(data);
+            log.info(dataStr);
+            try {
+                kafkaTemplate.send(GlobalMessageConstants.OPERATION_LOG_TOPIC, dataStr);
+            } catch (Exception e) {
+                log.error("Kafka logging exception.", e);
+            }
         }
     }
 
