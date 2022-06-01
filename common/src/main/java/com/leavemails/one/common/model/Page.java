@@ -24,4 +24,9 @@ public class Page<T> implements Serializable {
 
     private List<T> list;
 
+    public Page(List<T> list) {
+        this.setList(list);
+        this.setSize(list.size());
+    }
+
 }
