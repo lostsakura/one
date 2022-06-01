@@ -1,5 +1,6 @@
-package com.leavemails.one.common.model;
+package com.leavemails.one.common.domain.vo.log;
 
+import com.leavemails.one.common.domain.vo.BaseVO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,11 +8,11 @@ import java.util.Date;
 
 /**
  * @author lostsakura
- * @date 2022-05-28 22:00
+ * @date 2022-06-01 13:24
  */
 @Data
 @NoArgsConstructor
-public class LogOperationData {
+public class OperationLogVO extends BaseVO {
 
     private String host;
 
@@ -33,18 +34,14 @@ public class LogOperationData {
 
     private String responseBody;
 
-    private Date logTime = new Date();
+    private Date logTime;
 
     private Long costTime;
 
-    private String threadName = Thread.currentThread().getName();
+    private String threadName;
 
-    private Long threadId = Thread.currentThread().getId();
+    private Long threadId;
 
-    private Boolean success = false;
-
-    public void cost() {
-        this.setCostTime(System.currentTimeMillis() - this.getLogTime().getTime());
-    }
+    private Boolean success;
 
 }

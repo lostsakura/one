@@ -3,6 +3,7 @@ package com.leavemails.one.common.model;
 import cn.hutool.core.lang.Assert;
 import com.leavemails.one.common.constants.GlobalStatusCodeConstants;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * @date 2022-05-19 16:14
  */
 @Data
+@NoArgsConstructor
 public class Result<T> implements Serializable {
 
     private Integer code;

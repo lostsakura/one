@@ -13,6 +13,7 @@
         <module>common</module>
         <module>module</module>
         <module>task</module>
+        <module>log</module>
     </modules>
 
     <properties>
@@ -29,6 +30,9 @@
         <mybatis.version>2.1.4</mybatis.version>
         <mysql.version>8.0.28</mysql.version>
         <druid.version>1.2.8</druid.version>
+        <elasticsearch-java.version>7.17.2</elasticsearch-java.version>
+        <jackson-databind.version>2.11.4</jackson-databind.version>
+        <jakarta-json-api.version>2.0.1</jakarta-json-api.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <feign-okhttp.version>11.8</feign-okhttp.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -81,6 +85,22 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>co.elastic.clients</groupId>
+                <artifactId>elasticsearch-java</artifactId>
+                <version>${elasticsearch-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.json</groupId>
+                <artifactId>jakarta.json-api</artifactId>
+                <version>${jakarta-json-api.version}</version>
             </dependency>
 
             <dependency>

@@ -1,5 +1,6 @@
 package com.leavemails.one.common.domain.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,9 +12,7 @@ import java.util.Date;
  * @author lostsakura
  * @date 2022-05-20 18:15
  */
-@Getter
-@Setter
-@ToString
+@Data
 public class BaseDTO implements Serializable {
 
     private Long id;

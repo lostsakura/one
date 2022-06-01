@@ -29,16 +29,17 @@ filter {
 output {
   elasticsearch {
     hosts => ["localhost:9200"]
-    index => "operation-log"
-    template => "E:\Service\ELK\logstash-7.17.2\config\operation-log_template.json"
-    template_name => "logstash"
+    index => "operation-log-%{+YYYY.MM.dd}"
+    template => "D:\Development\Service\ELK\logstash-7.17.2\config\operation-log_template.json"
     template_overwrite => true
   }
 }
+
 ```
 operation-log_template.json
 ```json
 {
+  "index_patterns": ["operation-log-*"],
   "settings": {
     "number_of_shards": 3,
     "number_of_replicas": 0,

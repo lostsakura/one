@@ -1,0 +1,9 @@
+server:
+  port: 8790
+spring:
+  profiles:
+    active: dev
+  application:
+    name: one-log
+logging:
+  config: classpath:config/logback-spring.xml
