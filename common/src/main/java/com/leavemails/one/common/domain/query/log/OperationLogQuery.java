@@ -26,6 +26,8 @@ public class OperationLogQuery extends BaseQuery {
 
     private String type;
 
+    private Boolean success;
+
     private Long minCostTime;
 
     private Long maxCostTime;
