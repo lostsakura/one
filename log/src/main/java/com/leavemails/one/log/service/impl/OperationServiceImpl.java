@@ -84,6 +84,7 @@ public class OperationServiceImpl implements OperationService {
                                                 .order(SortOrder.Desc)
                                         )
                                 )
+                                .size(20)
                         , OperationLogVO.class
                 );
         List<OperationLogVO> collect = search.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
