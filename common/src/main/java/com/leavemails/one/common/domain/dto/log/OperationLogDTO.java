@@ -1,16 +1,20 @@
-package com.leavemails.one.common.domain.vo.log;
+package com.leavemails.one.common.domain.dto.log;
 
-import com.leavemails.one.common.domain.vo.BaseVO;
+import com.leavemails.one.common.domain.dto.BaseDTO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 /**
  * @author lostsakura
- * @date 2022-06-01 13:24
+ * @date 2022-06-02 00:16
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
-public class OperationLogVO extends BaseVO {
+public class OperationLogDTO extends BaseDTO {
 
     private String host;
 
@@ -32,7 +36,7 @@ public class OperationLogVO extends BaseVO {
 
     private String responseBody;
 
-    private Long logTime;
+    private Date logTime;
 
     private Long costTime;
 

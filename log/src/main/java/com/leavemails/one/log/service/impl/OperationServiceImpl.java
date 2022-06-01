@@ -6,10 +6,12 @@ import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
 import co.elastic.clients.json.JsonData;
 import com.leavemails.one.common.constants.GlobalIndexConstants;
+import com.leavemails.one.common.domain.dto.log.OperationLogDTO;
 import com.leavemails.one.common.domain.query.log.OperationLogQuery;
 import com.leavemails.one.common.domain.vo.log.OperationLogVO;
 import com.leavemails.one.common.model.Page;
 import com.leavemails.one.common.model.Result;
+import com.leavemails.one.log.convert.OperationLogConvert;
 import com.leavemails.one.log.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +37,7 @@ public class OperationServiceImpl implements OperationService {
 
     @Override
     public Result<Page<OperationLogVO>> list(OperationLogQuery query) throws IOException {
-        SearchResponse<OperationLogVO> search = elasticsearchClient
+        SearchResponse<OperationLogDTO> search = elasticsearchClient
                 .search(
                         r -> r
                                 .index(GlobalIndexConstants.OPERATION_LOG_INDEX)
@@ -85,10 +87,11 @@ public class OperationServiceImpl implements OperationService {
                                         )
                                 )
                                 .size(20)
-                        , OperationLogVO.class
+                        , OperationLogDTO.class
                 );
-        List<OperationLogVO> collect = search.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
-        Page<OperationLogVO> result = new Page<>(collect);
+        List<OperationLogDTO> collect = search.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
+        List<OperationLogVO> operationLogVOS = OperationLogConvert.INSTANCE.operationLogDTOS2operationLogVOS(collect);
+        Page<OperationLogVO> result = new Page<>(operationLogVOS);
         return Result.success(result);
     }
 }

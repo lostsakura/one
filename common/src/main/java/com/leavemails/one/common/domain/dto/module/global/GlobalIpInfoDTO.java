@@ -3,6 +3,7 @@ package com.leavemails.one.common.domain.dto.module.global;
 import com.leavemails.one.common.domain.dto.BaseDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -12,6 +13,7 @@ import java.util.Date;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@NoArgsConstructor
 public class GlobalIpInfoDTO extends BaseDTO {
 
     private Long id;
