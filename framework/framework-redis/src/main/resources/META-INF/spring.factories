@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.leavemails.one.common.aspect.OperationLogAspect
+  com.leavemails.one.framework.redis.config.RedisConfiguration

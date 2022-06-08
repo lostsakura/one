@@ -1,7 +1,7 @@
 package com.leavemails.one.log.convert;
 
-import com.leavemails.one.common.domain.dto.log.OperationLogDTO;
-import com.leavemails.one.common.domain.vo.log.OperationLogVO;
+import com.leavemails.one.log.domain.dto.OperationLogDTO;
+import com.leavemails.one.log.domain.vo.OperationLogVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

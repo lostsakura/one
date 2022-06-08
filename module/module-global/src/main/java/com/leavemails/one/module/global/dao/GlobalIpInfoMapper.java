@@ -1,6 +1,6 @@
 package com.leavemails.one.module.global.dao;
 
-import com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO;
+import com.leavemails.one.module.global.domain.dto.GlobalIpInfoDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

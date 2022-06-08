@@ -1,4 +1,4 @@
-package com.leavemails.one.common.domain.query.log;
+package com.leavemails.one.log.domain.query;
 
 import com.leavemails.one.common.constants.CommonConstants;
 import com.leavemails.one.common.domain.query.BaseQuery;

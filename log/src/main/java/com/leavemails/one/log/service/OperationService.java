@@ -1,7 +1,7 @@
 package com.leavemails.one.log.service;
 
-import com.leavemails.one.common.domain.query.log.OperationLogQuery;
-import com.leavemails.one.common.domain.vo.log.OperationLogVO;
+import com.leavemails.one.log.domain.query.OperationLogQuery;
+import com.leavemails.one.log.domain.vo.OperationLogVO;
 import com.leavemails.one.common.model.Page;
 import com.leavemails.one.common.model.Result;
 

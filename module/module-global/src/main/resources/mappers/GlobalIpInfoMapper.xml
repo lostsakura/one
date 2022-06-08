@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.leavemails.one.module.global.dao.GlobalIpInfoMapper">
     <insert id="insertGlobalIpInfo">
-        INSERT INTO global_ip_info (ip, latest_conn_time, insert_time, update_time)
+        INSERT IGNORE INTO global_ip_info (ip, latest_conn_time, insert_time, update_time)
         VALUES (INET_ATON(#{ip}), #{latestConnTime}, NOW(), NOW())
     </insert>
     <update id="updateGlobalIpInfoByIp">
@@ -29,7 +29,7 @@
         </where>
     </update>
 
-    <select id="selectAll" resultType="com.leavemails.one.common.domain.dto.module.global.GlobalIpInfoDTO">
+    <select id="selectAll" resultType="com.leavemails.one.module.global.domain.dto.GlobalIpInfoDTO">
         SELECT id,
                INET_NTOA(ip) ip,
                lng,
