@@ -1,10 +1,27 @@
 spring:
   datasource:
-    druid:
-      url: jdbc:mysql://leavemails.com:13306/one_global?useUnicode=true&useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: one
-      password: 123qwe
-      driver-class-name: com.mysql.cj.jdbc.Driver
+    druid: # Druid 【监控】相关的全局配置
+      web-stat-filter:
+        enabled: true
+      stat-view-servlet:
+        enabled: true
+        allow: 127.0.0.1
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: 123456
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true # 慢 SQL 记录
+          slow-sql-millis: 100
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+    url: jdbc:mysql://leavemails.com:13306/one_global?useUnicode=true&useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: one
+    password: 123qwe
+    driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: leavemails.com
     port: 16379

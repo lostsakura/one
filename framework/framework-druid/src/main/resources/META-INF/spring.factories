@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.leavemails.one.framework.druid.config.DruidConfiguration

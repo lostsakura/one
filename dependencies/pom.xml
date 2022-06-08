@@ -27,6 +27,7 @@
         <jackson-databind.version>2.11.4</jackson-databind.version>
         <jakarta-json-api.version>2.0.1</jakarta-json-api.version>
         <feign-okhttp.version>11.8</feign-okhttp.version>
+        <jasypt-spring-boot-starter.version>3.0.4</jasypt-spring-boot-starter.version>
     </properties>
 
     <dependencyManagement>
@@ -67,6 +68,11 @@
             <dependency>
                 <groupId>com.leavemails.one</groupId>
                 <artifactId>framework-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.leavemails.one</groupId>
+                <artifactId>framework-druid</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -121,6 +127,11 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
