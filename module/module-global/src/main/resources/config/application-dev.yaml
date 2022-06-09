@@ -1,5 +1,6 @@
 spring:
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     druid: # Druid 【监控】相关的全局配置
       web-stat-filter:
         enabled: true
@@ -8,7 +9,7 @@ spring:
         allow: 127.0.0.1
         url-pattern: /druid/*
         login-username: admin
-        login-password: 123456
+        login-password: ENC(UZPJEUhZI/NWHyB1Dkq8yGkrcKJaONQ+R1OmK18KFY6gC1imlMkD+gDG9HkWsLSV)
       filter:
         stat:
           enabled: true
@@ -19,13 +20,13 @@ spring:
           config:
             multi-statement-allow: true
     url: jdbc:mysql://leavemails.com:13306/one_global?useUnicode=true&useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: one
-    password: 123qwe
+    username: ENC(8ajfIb0rMrXTtq04HgWd0Qv8TC4Dyu/kegdcXAROfqHhdc6yi+v4Qt2TnoSYklA/)
+    password: ENC(2QY93/URgfsN9bW4M2cW/r8AUa4v+kWUzYWOi+BFhO34FI8XLGRwFIAapdbE6lmg)
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: leavemails.com
     port: 16379
-    password: qq282465134
+    password: ENC(nnnwSuAZ4wyQ7TGdvv3+QD2qevaQWnvxWtpnqL5GMAjJ7rhsOwV9UHj5xfd1caea)
     database: 1
     timeout: 5000
     jedis:
