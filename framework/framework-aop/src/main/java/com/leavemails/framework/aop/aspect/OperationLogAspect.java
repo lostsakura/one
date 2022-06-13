@@ -1,10 +1,10 @@
-package com.leavemails.one.common.aspect;
+package com.leavemails.framework.aop.aspect;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.json.JSONUtil;
-import com.leavemails.one.common.annotation.OperationLog;
-import com.leavemails.one.common.model.LogOperationData;
+import com.leavemails.framework.aop.annotation.OperationLog;
+import com.leavemails.framework.aop.model.LogOperationData;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -43,7 +43,7 @@ public class OperationLogAspect {
 //        this.kafkaTemplate = kafkaTemplate;
 //    }
 
-    @Pointcut("@annotation(com.leavemails.one.common.annotation.OperationLog)")
+    @Pointcut("@annotation(com.leavemails.framework.aop.annotation.OperationLog)")
     public void logPointCut() {
     }
 

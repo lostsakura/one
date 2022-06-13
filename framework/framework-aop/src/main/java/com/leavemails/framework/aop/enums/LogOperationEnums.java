@@ -1,4 +1,4 @@
-package com.leavemails.one.common.enums;
+package com.leavemails.framework.aop.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
