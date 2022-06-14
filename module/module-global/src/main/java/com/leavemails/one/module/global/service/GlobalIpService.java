@@ -1,7 +1,7 @@
 package com.leavemails.one.module.global.service;
 
 import com.leavemails.one.module.global.domain.vo.GlobalIpInfoVO;
-import com.leavemails.one.common.model.Result;
+import com.leavemails.one.framework.common.model.Result;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

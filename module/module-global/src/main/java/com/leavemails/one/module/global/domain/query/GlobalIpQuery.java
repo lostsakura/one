@@ -1,6 +1,6 @@
 package com.leavemails.one.module.global.domain.query;
 
-import com.leavemails.one.common.domain.query.BaseQuery;
+import com.leavemails.one.framework.common.domain.query.BaseQuery;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

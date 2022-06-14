@@ -21,6 +21,10 @@
         </dependency>
         <dependency>
             <groupId>com.leavemails.one</groupId>
+            <artifactId>framework-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.leavemails.one</groupId>
             <artifactId>framework-aop</artifactId>
         </dependency>
         <dependency>
@@ -60,11 +64,6 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.leavemails.one</groupId>
-            <artifactId>common</artifactId>
         </dependency>
 
         <dependency>

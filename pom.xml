@@ -10,8 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>common</module>
-        <module>task</module>
         <module>log</module>
         <module>module</module>
         <module>framework</module>

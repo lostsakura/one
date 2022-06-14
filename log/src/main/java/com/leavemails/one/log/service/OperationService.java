@@ -1,9 +1,9 @@
 package com.leavemails.one.log.service;
 
+import com.leavemails.one.framework.common.model.Page;
+import com.leavemails.one.framework.common.model.Result;
 import com.leavemails.one.log.domain.query.OperationLogQuery;
 import com.leavemails.one.log.domain.vo.OperationLogVO;
-import com.leavemails.one.common.model.Page;
-import com.leavemails.one.common.model.Result;
 
 import java.io.IOException;
 
@@ -15,6 +15,7 @@ public interface OperationService {
 
     /**
      * 操作日志列表查询
+     *
      * @param query
      * @return
      */

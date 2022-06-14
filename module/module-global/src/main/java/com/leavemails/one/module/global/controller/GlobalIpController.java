@@ -2,7 +2,7 @@ package com.leavemails.one.module.global.controller;
 
 import com.leavemails.framework.aop.annotation.OperationLog;
 import com.leavemails.framework.aop.enums.LogOperationEnums;
-import com.leavemails.one.common.model.Result;
+import com.leavemails.one.framework.common.model.Result;
 import com.leavemails.one.module.global.domain.vo.GlobalIpInfoVO;
 import com.leavemails.one.module.global.service.GlobalIpService;
 import org.springframework.beans.factory.annotation.Autowired;

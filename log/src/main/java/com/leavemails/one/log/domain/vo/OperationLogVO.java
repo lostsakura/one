@@ -1,6 +1,6 @@
 package com.leavemails.one.log.domain.vo;
 
-import com.leavemails.one.common.domain.vo.BaseVO;
+import com.leavemails.one.framework.common.domain.vo.BaseVO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

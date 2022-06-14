@@ -5,7 +5,7 @@ import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.json.JSONUtil;
 import com.leavemails.one.module.global.domain.dto.GlobalIpInfoDTO;
 import com.leavemails.one.module.global.domain.vo.GlobalIpInfoVO;
-import com.leavemails.one.common.model.Result;
+import com.leavemails.one.framework.common.model.Result;
 import com.leavemails.one.module.global.convert.GlobalIpInfoConvert;
 import com.leavemails.one.module.global.dao.GlobalIpInfoMapper;
 import com.leavemails.one.module.global.service.GlobalIpService;

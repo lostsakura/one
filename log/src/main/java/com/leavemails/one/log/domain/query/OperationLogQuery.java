@@ -1,7 +1,7 @@
 package com.leavemails.one.log.domain.query;
 
-import com.leavemails.one.common.constants.CommonConstants;
-import com.leavemails.one.common.domain.query.BaseQuery;
+import com.leavemails.one.framework.common.constants.CommonConstants;
+import com.leavemails.one.framework.common.domain.query.BaseQuery;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;

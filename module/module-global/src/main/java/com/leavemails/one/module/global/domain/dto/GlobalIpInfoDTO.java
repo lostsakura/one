@@ -1,6 +1,6 @@
 package com.leavemails.one.module.global.domain.dto;
 
-import com.leavemails.one.common.domain.dto.BaseDTO;
+import com.leavemails.one.framework.common.domain.dto.BaseDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
