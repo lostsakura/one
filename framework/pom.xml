@@ -18,11 +18,10 @@
 
     <modules>
         <module>framework-common</module>
-        <module>framework-aop</module>
+        <module>framework-web</module>
         <module>framework-druid</module>
         <module>framework-mybatis</module>
         <module>framework-redis</module>
-        <module>framework-exception</module>
     </modules>
 
     <dependencies>

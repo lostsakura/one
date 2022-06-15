@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.leavemails.framework.aop.aspect.OperationLogAspect
+  com.leavemails.framework.web.aspect.OperationLogAspect

@@ -1,4 +1,4 @@
-package com.leavemails.framework.aop.model;
+package com.leavemails.framework.web.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

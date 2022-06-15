@@ -73,7 +73,7 @@
             </dependency>
             <dependency>
                 <groupId>com.leavemails.one</groupId>
-                <artifactId>framework-aop</artifactId>
+                <artifactId>framework-web</artifactId>
                 <version>${revision}</version>
             </dependency>
 
