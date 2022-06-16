@@ -10,4 +10,6 @@ public interface GlobalStatusCodeConstants {
 
     StatusCode SUCCESS = new StatusCode(200, "成功");
 
+    StatusCode SYSTEM_ERROR = new StatusCode(500, "系统错误");
+
 }

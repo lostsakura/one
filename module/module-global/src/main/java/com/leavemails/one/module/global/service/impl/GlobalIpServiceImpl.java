@@ -70,6 +70,7 @@ public class GlobalIpServiceImpl implements GlobalIpService {
             }
             redisTemplate.opsForValue().set(IP_LIST_CACHE_MARK, globalIpInfoVOS);
         }
+        int x = 1 / 0;
         return Result.success(globalIpInfoVOS.stream().sorted(Comparator.comparingLong(GlobalIpInfoVO::getLatestConnTime).reversed()).collect(Collectors.toList()));
     }
 }

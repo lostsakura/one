@@ -1,7 +1,7 @@
 package com.leavemails.one.module.global.controller;
 
-import com.leavemails.framework.web.annotation.OperationLog;
-import com.leavemails.framework.web.enums.LogOperationEnums;
+import com.leavemails.one.framework.web.annotation.OperationLog;
+import com.leavemails.one.framework.web.enums.LogOperationEnums;
 import com.leavemails.one.framework.common.model.Result;
 import com.leavemails.one.module.global.domain.vo.GlobalIpInfoVO;
 import com.leavemails.one.module.global.service.GlobalIpService;

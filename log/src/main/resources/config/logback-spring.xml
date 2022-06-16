@@ -119,7 +119,7 @@
     </root>
 
     <springProfile name="dev,test">
-        <logger name="com.leavemails.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
+        <logger name="com.leavemails.one.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
             <appender-ref ref="operation_file"/>
         </logger>
         <logger name="com.leavemails.one" additivity="false">
@@ -133,7 +133,7 @@
     </springProfile>
 
     <springProfile name="prod">
-        <logger name="com.leavemails.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
+        <logger name="com.leavemails.one.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
             <appender-ref ref="operation_file"/>
         </logger>
         <logger name="com.leavemails.one" additivity="false">

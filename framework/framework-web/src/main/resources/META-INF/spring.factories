@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.leavemails.framework.web.aspect.OperationLogAspect
+  com.leavemails.one.framework.web.aspect.OperationLogAspect,\
+  com.leavemails.one.framework.web.handler.GlobalExceptionHandler

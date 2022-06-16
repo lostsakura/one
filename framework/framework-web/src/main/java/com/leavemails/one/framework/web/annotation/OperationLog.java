@@ -1,6 +1,6 @@
-package com.leavemails.framework.web.annotation;
+package com.leavemails.one.framework.web.annotation;
 
-import com.leavemails.framework.web.enums.LogOperationEnums;
+import com.leavemails.one.framework.web.enums.LogOperationEnums;
 import org.springframework.http.HttpHeaders;
 
 import java.lang.annotation.*;

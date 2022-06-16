@@ -13,9 +13,13 @@
 
     <packaging>jar</packaging>
 
-    <description>web应用相关</description>
+    <description>web应用相关（日志切面、全局异常处理）</description>
 
     <dependencies>
+        <dependency>
+            <groupId>com.leavemails.one</groupId>
+            <artifactId>framework-common</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

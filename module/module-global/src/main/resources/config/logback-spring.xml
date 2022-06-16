@@ -119,7 +119,7 @@
     </root>
 
     <springProfile name="dev,test">
-        <logger name="com.leavemails.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
+        <logger name="com.leavemails.one.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
             <appender-ref ref="operation_file"/>
         </logger>
         <logger name="com.leavemails.one" additivity="false">
@@ -127,18 +127,24 @@
             <appender-ref ref="warn_file"/>
             <appender-ref ref="error_file"/>
         </logger>
+        <logger name="com.leavemails.one.framework.web.handler" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
         <logger name="com.leavemails.one.module.global.dao" level="DEBUG" additivity="false">
             <appender-ref ref="console"/>
         </logger>
     </springProfile>
 
     <springProfile name="prod">
-        <logger name="com.leavemails.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
+        <logger name="com.leavemails.one.framework.web.aspect.OperationLogAspect" level="INFO" additivity="false">
             <appender-ref ref="operation_file"/>
         </logger>
         <logger name="com.leavemails.one" additivity="false">
             <appender-ref ref="info_file"/>
             <appender-ref ref="warn_file"/>
+            <appender-ref ref="error_file"/>
+        </logger>
+        <logger name="com.leavemails.one.framework.web.handler" additivity="false">
             <appender-ref ref="error_file"/>
         </logger>
     </springProfile>
