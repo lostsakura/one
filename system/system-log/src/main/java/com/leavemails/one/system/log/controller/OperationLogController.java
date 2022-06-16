@@ -1,10 +1,10 @@
-package com.leavemails.one.log.controller;
+package com.leavemails.one.system.log.controller;
 
 import com.leavemails.one.framework.common.model.Page;
 import com.leavemails.one.framework.common.model.Result;
-import com.leavemails.one.log.domain.query.OperationLogQuery;
-import com.leavemails.one.log.domain.vo.OperationLogVO;
-import com.leavemails.one.log.service.OperationService;
+import com.leavemails.one.system.log.domain.query.OperationLogQuery;
+import com.leavemails.one.system.log.domain.vo.OperationLogVO;
+import com.leavemails.one.system.log.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

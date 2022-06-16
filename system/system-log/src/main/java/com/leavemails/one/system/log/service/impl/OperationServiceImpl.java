@@ -1,4 +1,4 @@
-package com.leavemails.one.log.service.impl;
+package com.leavemails.one.system.log.service.impl;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.SortOrder;
@@ -8,11 +8,11 @@ import co.elastic.clients.json.JsonData;
 import com.leavemails.one.framework.common.constants.GlobalIndexConstants;
 import com.leavemails.one.framework.common.model.Page;
 import com.leavemails.one.framework.common.model.Result;
-import com.leavemails.one.log.convert.OperationLogConvert;
-import com.leavemails.one.log.domain.dto.OperationLogDTO;
-import com.leavemails.one.log.domain.query.OperationLogQuery;
-import com.leavemails.one.log.domain.vo.OperationLogVO;
-import com.leavemails.one.log.service.OperationService;
+import com.leavemails.one.system.log.convert.OperationLogConvert;
+import com.leavemails.one.system.log.domain.dto.OperationLogDTO;
+import com.leavemails.one.system.log.domain.query.OperationLogQuery;
+import com.leavemails.one.system.log.domain.vo.OperationLogVO;
+import com.leavemails.one.system.log.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

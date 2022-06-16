@@ -10,9 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>log</module>
-        <module>module</module>
         <module>framework</module>
+        <module>system</module>
+        <module>module</module>
     </modules>
 
     <properties>

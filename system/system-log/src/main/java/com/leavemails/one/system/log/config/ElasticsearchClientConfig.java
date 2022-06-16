@@ -1,4 +1,4 @@
-package com.leavemails.one.log.config;
+package com.leavemails.one.system.log.config;
 
 import cn.hutool.core.util.StrUtil;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;

@@ -1,4 +1,4 @@
-package com.leavemails.one.log.domain.vo;
+package com.leavemails.one.system.log.domain.vo;
 
 import com.leavemails.one.framework.common.domain.vo.BaseVO;
 import lombok.Data;

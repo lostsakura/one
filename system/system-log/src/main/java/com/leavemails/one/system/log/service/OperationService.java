@@ -1,9 +1,9 @@
-package com.leavemails.one.log.service;
+package com.leavemails.one.system.log.service;
 
 import com.leavemails.one.framework.common.model.Page;
 import com.leavemails.one.framework.common.model.Result;
-import com.leavemails.one.log.domain.query.OperationLogQuery;
-import com.leavemails.one.log.domain.vo.OperationLogVO;
+import com.leavemails.one.system.log.domain.query.OperationLogQuery;
+import com.leavemails.one.system.log.domain.vo.OperationLogVO;
 
 import java.io.IOException;
 

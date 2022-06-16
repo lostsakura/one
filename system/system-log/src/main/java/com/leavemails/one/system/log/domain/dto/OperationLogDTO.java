@@ -1,4 +1,4 @@
-package com.leavemails.one.log.domain.dto;
+package com.leavemails.one.system.log.domain.dto;
 
 import com.leavemails.one.framework.common.domain.dto.BaseDTO;
 import lombok.Data;
